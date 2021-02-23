@@ -1,0 +1,74 @@
+{
+  "name": "@rescuento/MODULE_NAME",
+  "version": "0.0.1",
+  "description": "Here the module description",
+  "author": "Dani Manuel <dmanuelcl@rescuento.com>",
+  "license": "UNLICENSED",
+  "readmeFilename": "README.md",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*",
+    "*.md"
+  ],
+  "scripts": {
+    "start:dev": "tsc -w",
+    "build": "tsc",
+    "prepare": "npm run build",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "keywords": [
+    "nestjs"
+  ],
+  "publishConfig": {
+    "access": "private"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/rescuento/MODULE_NAME.git"
+  },
+  "bugs": "https://bitbucket.org/rescuento/MODULE_NAME",
+  "peerDependencies": {
+    "@nestjs/common": "^7.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0",
+    "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/testing": "^7.0.0",
+    "@types/express": "^4.17.3",
+    "@types/jest": "25.2.3",
+    "@types/node": "^13.9.1",
+    "@types/supertest": "^2.0.8",
+    "jest": "26.0.1",
+    "prettier": "^1.19.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.6.3",
+    "supertest": "^4.0.2",
+    "ts-jest": "26.1.0",
+    "ts-node": "^8.6.2",
+    "tsc-watch": "2.2.1",
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "5.16.0",
+    "typescript": "^3.7.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
