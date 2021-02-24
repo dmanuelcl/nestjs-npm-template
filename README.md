@@ -38,25 +38,33 @@ $ npm install
 $ npm install ../NEW_MODULE_NAME
 ```
 
-Puedes ejecutar 
+Luego en la carpeta `docker` actualizamos los ficheros `run.sh` y `docker-compose.yml` para remplazar **MODULE_NAME** con **NEW\_MODULE\_NAME**
+
+
+## Ejecución 
+
+Para realizar las pruebas necesarias usaremos docker asi garantizamos mantener la misma plataforma que se va a usar en producción
 
 ```bash
-$ npm run start:dev
+$ cd docker && ./run.sh
 ```
-En la carpeta **test-app** para que se mantenga actualizado los cambios en la app de prueba
- 
-Siempre que se haga algun cambio en el módulo/lirería tenemos que ejecutar en la carpeta **NEW\_MODULE\_NAME**
 
+Para compilar los cambios que hagamos en la librería abrimos una terminal y ejecutamos
+
+```bash
+$ docker exec -it NEW_MODULE_NAME /bin/bash
+$ cd /usr/local/app/NEW_MODULE_NAME
+```
+
+Siempre que hagamos alguna modificación y necesitemos que se vea reflejada en la app de prueba tenemos que ejecutar el siguiente comando desde la terminal que abrimos en el paso anterior
 ```bash
 $ npm run build
 ```
 
-para que los cambios se vean reflejados en la app
-
 
 ##Deploy
 
-Una vez que se termine de implementar necesitamos actualizar la version de la libreria en **package.json**, luego hacer push al repo y crear el `tag` correspondiente a la version, luego solo queda publicar el proyecto en `npm` para esto ejecutamos el siguiente comando en la carpeta **NEW\_MODULE\_NAME**
+Una vez que se termine de implementar necesitamos actualizar la version de la librería en **package.json**, luego hacer push al repo y crear el `tag` correspondiente a la versión, luego solo queda publicar el proyecto en `npm` para esto ejecutamos en la terminal de docker el siguiente comando
 
 ```bash
 $ npm publish

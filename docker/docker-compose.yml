@@ -1,0 +1,21 @@
+# THIS DOCKERFILE IS INTENDED FOR DEVELOPMENT ENVIRONMENTS
+# DO NOT USE THIS FOR PRODUCTION USAGES.
+
+version: '3.4'
+
+services:
+  MODULE_NAME:
+    container_name: MODULE_NAME
+    build:
+      context: ../.
+      dockerfile: ./docker/Dockerfile
+    image: 'MODULE_NAME:0.1.0'
+    domainname: MODULE_NAME.local
+    hostname: MODULE_NAME
+    ports:
+      - '3000:3000'
+    volumes:
+      - '../.:/usr/local/app:delegated'
+    environment:
+      - NODE_ENV=dev
+      - APP_PORT=3000
