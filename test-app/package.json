@@ -25,7 +25,7 @@
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.6.13",
     "@nestjs/swagger": "^4.7.15",
-    "@rescuento/emails": "file:../emails",
+    "@rescuento/MODULE_NAME": "file:../MODULE_NAME",
     "fastify-swagger": "^4.3.1",
     "install": "^0.13.0",
     "npm": "^7.6.0",
