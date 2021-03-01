@@ -13,7 +13,7 @@ services:
     domainname: MODULE_NAME.local
     hostname: MODULE_NAME
     ports:
-      - '3000:3000'
+      - 'EXTERNAL_PORT_HERE:3000'
     volumes:
       - '../.:/usr/local/app:delegated'
     environment:
