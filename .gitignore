@@ -6,8 +6,8 @@
 # Node artifact files
 node_modules/
 dist/
-emails/node_modules/
-emails/dist/
+*/node_modules/
+*/dist/
 test-app/node_modules/
 test-app/dist/
 
